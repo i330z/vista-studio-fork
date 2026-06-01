@@ -19,7 +19,7 @@ const accommodations = [
   {
     id: 3,
     title: "Resorts & Hotels",
-    image: "https://tungtaoresort.com/wp-content/uploads/2021/12/2024-08-25-1.jpg",
+    image: "https://www.orchidhotel.com/static/website/img/hotels/panchgani/homepage_slider/homepage_slider.webp",
     description: "Connect with local culture through our carefully selected homestay experiences"
   },
   {
@@ -34,17 +34,17 @@ export const Accommodations = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        
+
         <SectionTitle title="Accommodations" subtitle="Find your perfect home away from home" />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {accommodations.map((accommodation) => (
-            <Card 
+            <Card
               key={accommodation.id}
               className="group overflow-hidden border-0  transition-all duration-500 hover:-translate-y-3"
             >
               <div className="relative h-64 overflow-hidden rounded-lg">
-                <img 
+                <img
                   src={accommodation.image}
                   alt={accommodation.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 rounded-lg"
@@ -68,7 +68,7 @@ export const Accommodations = () => {
             </Card>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
           <Link to="/stay">
             <Button variant="travel" size="lg" className="px-8 bg-yellow-300 hover:bg-yellow-400 text-black uppercase tracking-wider">

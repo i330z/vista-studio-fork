@@ -1,5 +1,5 @@
 import { Navigation } from "@/components/Navigation";
-import  HeroSection  from "@/components/NewHeroSection";
+import HeroSection from "@/components/NewHeroSection";
 import { TopDestinationsSlider } from "@/components/TopDestinationsSlider";
 import { AboutCompany } from "@/components/AboutCompany";
 import { WhatWeOffer } from "@/components/WhatWeOffer";
@@ -29,22 +29,22 @@ const Index = () => {
     <div className="min-h-screen">
       {/* <Navigation /> */}
       <HeroSection />
-      <ChatCTA/>
+      <ChatCTA />
       <TopDestinationsSlider />
       <WhatWeDo />
       <TopPlaceSlider />
       {/* <Adventure /> */}
       {/* <TravelGrid/> */}
-      <ThingsWeDo/>
+      <ThingsWeDo />
       <OurTeam />
       <Gallery />
       {/* <TopDestinationsSlider /> */}
       {/* <AboutCompany /> */}
       {/* <WhatWeOffer /> */}
-      <TourPackages />
+      {/* <TourPackages /> */}
       <Accommodations />
-      <Why/>
-      <Blog/>
+      <Why />
+      <Blog />
       {/* <ExperienceGallery /> */}
       {/* <WhyChooseUs /> */}
       {/* <Testimonials /> */}
