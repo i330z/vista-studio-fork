@@ -1,7 +1,7 @@
 import TravelChatbot from "@/components/TravelChatbot";
 
 const Index = () => {
-    return <TravelChatbot />;
+    // return <TravelChatbot />;
 };
 
 export default Index;
