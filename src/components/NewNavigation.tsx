@@ -4,6 +4,10 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
     const location = useLocation();
 
+    if (location.pathname === '/') {
+        return null;
+    }
+
     const navItems = [
         { name: 'HOME', url: '/' },
         { name: 'DESTINATIONS', url: '/destinations' },

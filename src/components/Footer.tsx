@@ -1,145 +1,101 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#31b7d0] text-white">
-      {/* Newsletter Section */}
-      {/* <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4">Join Our Newsletter</h3>
-            <p className="text-white/80 max-w-2xl mx-auto">
-              Get exclusive travel deals, destination guides, and adventure tips delivered to your inbox
+    <footer className="bg-[#030f1c] text-white py-16 px-6 md:px-12 lg:px-20 border-t border-white/5">
+      <div className="max-w-[1600px] mx-auto">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+
+          {/* Column 1: Brand & Info (50% on desktop) */}
+          <div className="md:col-span-6 space-y-6 text-left">
+            <Link to="/" className="flex items-center space-x-3 group w-fit">
+              <div className="bg-[#fec80a] text-black font-extrabold w-8 h-8 flex items-center justify-center text-sm font-sans rounded-xs shadow-md transition-transform duration-300 group-hover:scale-105">
+                FE
+              </div>
+              <span className="text-white font-bold tracking-widest text-sm font-sans transition-colors duration-300 group-hover:text-[#fec80a]">
+                FAR EAST EXPEDITION
+              </span>
+            </Link>
+
+            <p className="text-white/70 text-sm font-serif leading-relaxed max-w-md font-light">
+              A community-led travel collective under North East Sustainable Tourism (NEST),
+              building slow, low-impact journeys across the seven sister states of Northeast India.
             </p>
           </div>
-          <div className="max-w-md mx-auto flex gap-4">
-            <Input 
-              placeholder="Enter your email"
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-            />
-            <Button variant="secondary" className="bg-white text-travel-ocean hover:bg-white/90">
-              Subscribe
-            </Button>
+
+          {/* Column 2: Explore Links (25% on desktop) */}
+          <div className="md:col-span-3 text-left">
+            <h5 className="text-[#fec80a] font-bold text-xs tracking-widest uppercase mb-6 font-sans">
+              Explore
+            </h5>
+            <ul className="space-y-3 font-sans">
+              <li>
+                <Link to="/destinations" className="text-white/80 hover:text-[#fec80a] text-sm transition-colors duration-200">
+                  Destinations
+                </Link>
+              </li>
+              <li>
+                <Link to="/experiences" className="text-white/80 hover:text-[#fec80a] text-sm transition-colors duration-200">
+                  Experiences
+                </Link>
+              </li>
+              <li>
+                <Link to="/travel" className="text-white/80 hover:text-[#fec80a] text-sm transition-colors duration-200">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/create-plan" className="text-white/80 hover:text-[#fec80a] text-sm transition-colors duration-200">
+                  Plan a Trip
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-white/80 hover:text-[#fec80a] text-sm transition-colors duration-200">
+                  Our Story
+                </Link>
+              </li>
+            </ul>
           </div>
-        </div>
-      </div> */}
-      
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Company Info */}
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-2xl font-bold mb-4">North East Sustainable Tourism - NEST</h4>
-              <p className="text-white/80 leading-relaxed">
-                Your gateway to extraordinary adventures. We curate unforgettable travel experiences 
-                with premium vehicles and handpicked accommodations.
+
+          {/* Column 3: Contact Info (25% on desktop) */}
+          <div className="md:col-span-3 text-left">
+            <h5 className="text-[#fec80a] font-bold text-xs tracking-widest uppercase mb-6 font-sans">
+              Contact
+            </h5>
+            <div className="space-y-3 font-serif text-sm text-white/80 font-light leading-relaxed">
+              <p>
+                <a href="mailto:hello@fareastexpedition.com" className="hover:text-[#fec80a] transition-colors">
+                  hello@fareastexpedition.com
+                </a>
+              </p>
+              <p>
+                Kuala Terengganu, Malaysia
               </p>
             </div>
-            <div className="flex space-x-4">
-              <Button variant="ghost" size="sm" className="text-white hover:bg-white/10">
-                <Facebook className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-white hover:bg-white/10">
-                <Instagram className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-white hover:bg-white/10">
-                <Twitter className="w-5 h-5" />
-              </Button>
-            </div>
           </div>
-          
-          {/* Services */}
-          <div>
-            <h5 className="text-lg font-semibold mb-6">Services</h5>
-            <ul className="space-y-3">
-              {[
-                { name: "Vehicle Rentals", path: "/travel" },
-                { name: "Accommodation Booking", path: "/stay" },
-                { name: "Tour Packages", path: "/packages" },
-                { name: "Create Your Plan", path: "/create-plan" },
-                { name: "Travel Guides", path: "/destinations" },
-                { name: "24/7 Support", path: "/contact" },
-                { name: "State Wise Destinations", path: "/state" }
-              ].map((service, index) => (
-                <li key={index}>
-                  <Link to={service.path} className="text-white/80 hover:text-white transition-colors">
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Popular Destinations */}
-          <div>
-            <h5 className="text-lg font-semibold mb-6">Destinations</h5>
-            <ul className="space-y-3">
-              {[
-                { name: "Tawang", path: "/destination/tawang" },
-                { name: "Mechuka", path: "/destination/mechuka" },
-                { name: "Ziro", path: "/destination/ziro" },
-                { name: "Namsai", path: "/destination/namsai" },
-                { name: "Namdapha", path: "/destination/namdapha" },
-                { name: "All Destinations", path: "/destinations" }
-              ].map((destination, index) => (
-                <li key={index}>
-                  <Link to={destination.path} className="text-white/80 hover:text-white transition-colors">
-                    {destination.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Contact Info */}
-          <div>
-            <h5 className="text-lg font-semibold mb-6">Contact Us</h5>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-yellow-300" />
-                <span className="text-white/80">8486 4567 60</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-yellow-300" />
-                <span className="text-white/80">Info.discoverfareast@gmail.com</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapIcon className="w-5 h-5 text-yellow-300 mt-1" />
-                <span className="text-white/80">
-                  Tinsukia,
-                  Assam
-                </span>
-              </div>
-            </div>
-          </div>
+
         </div>
-      </div>
-      
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white/60 text-sm">
-              © 2025 North East Sustainable Tourism - NEST. All rights reserved.
-            </p>
-            <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" className="text-white/60 hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-white/60 hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-              <Link to="/cookies" className="text-white/60 hover:text-white transition-colors">
-                Cookie Policy
-              </Link>
-            </div>
-          </div>
+
+        {/* Bottom Bar Divider */}
+        <div className="border-t border-white/10 my-8"></div>
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-white/40 tracking-widest uppercase font-sans space-y-4 md:space-y-0 py-2">
+          <p>
+            © {currentYear} NEST · FAR EAST EXPEDITION
+          </p>
+          <p>
+            MADE SLOWLY, IN THE NORTHEAST.
+          </p>
         </div>
+
       </div>
     </footer>
   );
 };
+
+export default Footer;

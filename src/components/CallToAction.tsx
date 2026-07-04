@@ -1,62 +1,55 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const CallToAction = () => {
   return (
-    <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0">
+    <section className="w-full flex flex-col md:flex-row min-h-[500px]">
+      {/* Left Column: Sunset Boat Image */}
+      <div className="w-full md:w-1/2 relative min-h-[350px] md:min-h-auto flex">
         <img 
-          src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1920&h=1080&fit=crop"
-          alt="Adventure calling"
-          className="w-full h-full object-cover"
+          src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
+          alt="Sunset boat"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-travel-ocean/90 via-travel-teal/80 to-travel-ocean/90"></div>
-        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <div className="relative max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-          Ready for Your Next Adventure?
-        </h2>
-        <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
-          Don't wait for the perfect moment - create it! Book your dream destination 
-          today and embark on a journey that will change your perspective forever.
-        </p>
+      {/* Right Column: Cyan Details Card */}
+      <div className="w-full md:w-1/2 bg-[#00bdf2] flex items-center px-8 py-16 md:py-24 lg:px-20 lg:py-28 text-left">
+        <div className="max-w-xl">
+          {/* Tagline */}
+          <p className="text-[#0a314b]/60 font-bold text-xs md:text-sm tracking-widest uppercase mb-4 font-sans">
+            04 - Plan Your Trip
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-          {/* <Button 
-            size="lg" 
-            className="px-8 py-4 text-lg group rounded-none bg-[#31b7d0] hover:bg-[#2a9bb0] text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-          >
-            Plan Your Trip
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Button> */}
-          <Link to="/create-plan">
-            <Button
-              size="lg"
-              className="px-8 py-4 rounded-none text-lg bg-yellow-300 hover:bg-400 text-black font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-400"
+          {/* Heading */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] text-[#0a314b] font-sans uppercase mb-6">
+            Tell us your dates. <br />
+            We'll shape the rest.
+          </h2>
+
+          {/* Subtitle / Description */}
+          <p className="text-[#0a314b]/95 text-sm md:text-base font-serif leading-relaxed mb-10 max-w-lg">
+            A single form, a real human on the other side. We'll build an itinerary from permits to homestays — routed through the operators we know and trust across the Northeast.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-4 items-center">
+            <Link 
+              to="/create-plan"
+              className="inline-flex items-center justify-center bg-[#fec80a] hover:bg-[#e0b007] text-black font-extrabold px-6 py-3.5 text-xs md:text-sm tracking-widest transition-all duration-300 rounded-sm shadow-md uppercase hover:shadow-lg"
             >
-              Plan Your Trip
-            </Button>
-          </Link>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-white/90">
-          <div className="flex items-center gap-2">
-            <Phone className="h-5 w-5" />
-            <span>+91 98765 43210</span>
+              Start Planning <span className="ml-2 font-sans">→</span>
+            </Link>
+            <Link 
+              to="/about"
+              className="inline-flex items-center justify-center border border-[#0a314b] text-[#0a314b] hover:bg-[#0a314b] hover:text-white font-extrabold px-6 py-3.5 text-xs md:text-sm tracking-widest transition-all duration-300 rounded-sm uppercase"
+            >
+              Read Our Story
+            </Link>
           </div>
-          <div className="flex items-center gap-2">
-            <Mail className="h-5 w-5" />
-            <span>info@adventuretours.com</span>
-          </div>
-        </div>
-
-        <div className="mt-8 text-white/70 text-sm">
-          <p>Available 24/7 • Instant Confirmation • Best Price Guarantee</p>
         </div>
       </div>
     </section>
   );
 };
+export default CallToAction;

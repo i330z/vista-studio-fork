@@ -29,7 +29,7 @@ const Index = () => {
     <div className="min-h-screen">
       {/* <Navigation /> */}
       <HeroSection />
-      <ChatCTA />
+      {/* <ChatCTA /> */}
       <TopDestinationsSlider />
       <WhatWeDo />
       <TopPlaceSlider />
@@ -42,9 +42,9 @@ const Index = () => {
       {/* <AboutCompany /> */}
       {/* <WhatWeOffer /> */}
       {/* <TourPackages /> */}
-      <Accommodations />
+      {/* <Accommodations /> */}
       <Why />
-      <Blog />
+      {/* <Blog /> */}
       {/* <ExperienceGallery /> */}
       {/* <WhyChooseUs /> */}
       {/* <Testimonials /> */}
