@@ -83,7 +83,7 @@ function TopPlaceSlider() {
 				<div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-16 px-3">
 					<div className="max-w-2xl">
 						<p className="text-[#31b7d0] font-bold text-xs md:text-sm tracking-widest uppercase mb-3 font-sans">
-							01 - Destinations
+							02 - Destinations
 						</p>
 						<h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] text-slate-900 font-sans uppercase">
 							Places the map <br />

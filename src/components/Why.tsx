@@ -51,7 +51,7 @@ function FarEast() {
                 {/* Header */}
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <p className="text-xs md:text-sm font-bold tracking-widest text-[#fec80a] uppercase mb-4 font-sans">
-                        04 · SUSTAINABILITY
+                        05 · SUSTAINABILITY
                     </p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none uppercase font-sans mb-6">
                         Sustainable <br />

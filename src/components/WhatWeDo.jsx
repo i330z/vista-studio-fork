@@ -79,7 +79,7 @@ export default function WhatWeDo() {
                 {/* Section Header */}
                 <div className="max-w-3xl text-left mb-24 px-3">
                     <p className="text-[#fec80a] font-bold text-xs md:text-sm tracking-widest uppercase mb-4 font-sans">
-                        02 - Services
+                        01 - Services
                     </p>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] text-white font-sans uppercase">
                         Every part of the, <br />

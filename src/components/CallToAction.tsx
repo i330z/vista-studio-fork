@@ -18,7 +18,7 @@ export const CallToAction = () => {
         <div className="max-w-xl">
           {/* Tagline */}
           <p className="text-[#0a314b]/60 font-bold text-xs md:text-sm tracking-widest uppercase mb-4 font-sans">
-            04 - Plan Your Trip
+            06 · PLAN YOUR TRIP
           </p>
 
           {/* Heading */}

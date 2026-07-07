@@ -1,5 +1,4 @@
 import React from 'react';
-import SectionTitle from './SectionTitle';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Bike, Mountain, Leaf, Compass } from 'lucide-react';
 
@@ -22,8 +21,6 @@ import s2 from "@/assets/tabs/s2.jpg"
 import s3 from "@/assets/tabs/s3.jpg"
 import s4 from "@/assets/tabs/s4.jpg"
 import s5 from "@/assets/tabs/s5.jpg"
-
-
 
 const tabData = {
     cycling: [
@@ -134,47 +131,94 @@ const tabData = {
 
 const TravelGrid = () => {
     return (
-        <section className='bg-blue-50 py-20 px-4'>
-            <SectionTitle title="Things We Do" subtitle="Comprehensive travel solutions designed to make your journey seamless and unforgettable" />
-            <Tabs defaultValue="cycling" className="max-w-7xl mx-auto">
-                <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 max-w-2xl mx-auto mb-8 bg-white">
-                    <TabsTrigger value="cycling" className="group">
-                        <Bike className="mr-2 h-4 w-4 transition-colors group-data-[state=active]:text-teal-400" />
-                        Cycling
-                    </TabsTrigger>
-                    <TabsTrigger value="hiking" className="group">
-                        <Mountain className="mr-2 h-4 w-4 transition-colors group-data-[state=active]:text-teal-400" />
-                        Hiking
-                    </TabsTrigger>
-                    <TabsTrigger value="sustainability" className="group">
-                        <Leaf className="mr-2 h-4 w-4 transition-colors group-data-[state=active]:text-teal-400" />
-                        Sustainability
-                    </TabsTrigger>
-                    <TabsTrigger value="adventure" className="group">
-                        <Compass className="mr-2 h-4 w-4 transition-colors group-data-[state=active]:text-teal-400" />
-                        Adventure
-                    </TabsTrigger>
-                </TabsList>
-                {Object.entries(tabData).map(([key, images]) => (
-                    <TabsContent key={key} value={key}>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            {images.map((post, idx) => (
-                                <div key={idx} className="relative overflow-hidden group rounded-lg h-80">
-                                    <img
-                                        src={post.image}
-                                        alt={post.title}
-                                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                                    {/* <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h3 className="text-xl md:text-2xl font-bold">{post.title}</h3>
-                                    </div> */}
-                                </div>
-                            ))}
-                        </div>
-                    </TabsContent>
-                ))}
-            </Tabs>
+        <section className='bg-[#faf9f6] py-28 px-4'>
+            <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+                
+                {/* Header matching site layout style */}
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-16 px-3">
+                    <div className="max-w-2xl">
+                        <p className="text-xs md:text-sm font-bold tracking-widest text-[#31b7d0] uppercase mb-4 font-sans">
+                            03 · THINGS TO DO
+                        </p>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] text-slate-900 font-sans uppercase">
+                            Active trails. <br />
+                            <span className="text-[#31b7d0]">Slow travels.</span>
+                        </h2>
+                    </div>
+                    <div className="max-w-md lg:mb-2">
+                        <p className="text-sm md:text-base text-gray-500 font-serif leading-relaxed">
+                            From cycling across river islands to high-altitude treks, we organize small-group explorations centered around community and environment.
+                        </p>
+                    </div>
+                </div>
+
+                <Tabs defaultValue="cycling" className="w-full">
+                    {/* Premium tab selectors list */}
+                    <TabsList className="flex flex-wrap items-center justify-start gap-3 bg-transparent mb-12 h-auto p-0 border-b border-gray-200 pb-4">
+                        <TabsTrigger 
+                            value="cycling" 
+                            className="group px-5 py-3 text-xs font-bold tracking-widest uppercase rounded-sm border border-gray-200 bg-white text-gray-600 data-[state=active]:bg-[#fec80a] data-[state=active]:text-slate-950 data-[state=active]:border-[#fec80a] hover:bg-gray-50 transition-all duration-300"
+                        >
+                            <Bike className="mr-2 h-4 w-4 transition-colors group-data-[state=active]:text-slate-950" />
+                            Cycling
+                        </TabsTrigger>
+                        <TabsTrigger 
+                            value="hiking" 
+                            className="group px-5 py-3 text-xs font-bold tracking-widest uppercase rounded-sm border border-gray-200 bg-white text-gray-600 data-[state=active]:bg-[#fec80a] data-[state=active]:text-slate-950 data-[state=active]:border-[#fec80a] hover:bg-gray-50 transition-all duration-300"
+                        >
+                            <Mountain className="mr-2 h-4 w-4 transition-colors group-data-[state=active]:text-slate-950" />
+                            Hiking
+                        </TabsTrigger>
+                        <TabsTrigger 
+                            value="sustainability" 
+                            className="group px-5 py-3 text-xs font-bold tracking-widest uppercase rounded-sm border border-gray-200 bg-white text-gray-600 data-[state=active]:bg-[#fec80a] data-[state=active]:text-slate-950 data-[state=active]:border-[#fec80a] hover:bg-gray-50 transition-all duration-300"
+                        >
+                            <Leaf className="mr-2 h-4 w-4 transition-colors group-data-[state=active]:text-slate-950" />
+                            Sustainability
+                        </TabsTrigger>
+                        <TabsTrigger 
+                            value="adventure" 
+                            className="group px-5 py-3 text-xs font-bold tracking-widest uppercase rounded-sm border border-gray-200 bg-white text-gray-600 data-[state=active]:bg-[#fec80a] data-[state=active]:text-slate-950 data-[state=active]:border-[#fec80a] hover:bg-gray-50 transition-all duration-300"
+                        >
+                            <Compass className="mr-2 h-4 w-4 transition-colors group-data-[state=active]:text-slate-950" />
+                            Adventure
+                        </TabsTrigger>
+                    </TabsList>
+                    
+                    {Object.entries(tabData).map(([key, items]) => (
+                        <TabsContent key={key} value={key} className="focus-visible:outline-none">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {items.map((item, idx) => (
+                                    <div 
+                                        key={idx} 
+                                        className="relative overflow-hidden group rounded-sm aspect-[4/3] bg-slate-900 shadow-md cursor-pointer"
+                                    >
+                                        {/* Image */}
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                        />
+                                        
+                                        {/* Gradient Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/20 to-transparent opacity-90 z-10"></div>
+                                        
+                                        {/* Content */}
+                                        <div className="absolute inset-0 flex flex-col justify-end p-6 z-20">
+                                            <h3 className="text-xl font-black text-white tracking-wide uppercase font-sans group-hover:text-[#fec80a] transition-colors duration-300">
+                                                {item.title}
+                                            </h3>
+                                            <span className="text-[10px] font-bold tracking-widest text-[#31b7d0] uppercase mt-1 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-1">
+                                                Discover Experience <span className="text-xs">↗</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </TabsContent>
+                    ))}
+                </Tabs>
+            </div>
         </section>
     );
 };
