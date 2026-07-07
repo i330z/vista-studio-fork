@@ -41,14 +41,17 @@ const HeroSection = () => {
                     <Link to="/destinations" className="text-white/95 hover:text-[#fec80a] text-xs font-bold tracking-widest transition-colors duration-200 uppercase">
                         Destinations
                     </Link>
-                    <Link to="/experiences" className="text-white/95 hover:text-[#fec80a] text-xs font-bold tracking-widest transition-colors duration-200 uppercase">
+                    {/* <Link to="/experiences" className="text-white/95 hover:text-[#fec80a] text-xs font-bold tracking-widest transition-colors duration-200 uppercase">
                         Experiences
                     </Link>
                     <Link to="/travel" className="text-white/95 hover:text-[#fec80a] text-xs font-bold tracking-widest transition-colors duration-200 uppercase">
                         Services
-                    </Link>
-                    <Link to="/create-plan" className="text-white/95 hover:text-[#fec80a] text-xs font-bold tracking-widest transition-colors duration-200 uppercase">
+                    </Link> */}
+                    {/* <Link to="/create-plan" className="text-white/95 hover:text-[#fec80a] text-xs font-bold tracking-widest transition-colors duration-200 uppercase">
                         Plan a Trip
+                    </Link> */}
+                    <Link to="/contact" className="text-white/95 hover:text-[#fec80a] text-xs font-bold tracking-widest transition-colors duration-200 uppercase">
+                        Get in Contact
                     </Link>
                     <Link to="/about" className="text-white/95 hover:text-[#fec80a] text-xs font-bold tracking-widest transition-colors duration-200 uppercase">
                         Our Story
